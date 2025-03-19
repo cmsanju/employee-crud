@@ -1,0 +1,46 @@
+[
+    {
+        "id":1,
+        "name":"Rohit",
+        "email":"rohit@gmail.com",
+        "gender":"Male"
+    },
+    {
+        "id":2,
+        "name":"Kohli",
+        "email":"kohli@gmail.com",
+        "gender":"Male"
+    },
+    {
+        "id":3,
+        "name":"Dhoni",
+        "email":"dhoni@gmail.com",
+        "gender":"Male"
+    },
+    {
+        "id":4,
+        "name":"Jaiswal",
+        "email":"jaiswal@gmail.com",
+        "gender":"Male"
+    },
+    {
+        "id":5,
+        "name":"Rahul",
+        "email":"rahul@gmail.com",
+        "gender":"Male"
+    },
+    {
+        "id":6,
+        "name":"rishabpant",
+        "email":"rishab@gmail.com",
+        "gender":"Male"
+    },
+    {
+        "id":7,
+        "name":"raina",
+        "email":"suresh@gmail.com",
+        "gender":"Male"
+    }
+    
+
+]
