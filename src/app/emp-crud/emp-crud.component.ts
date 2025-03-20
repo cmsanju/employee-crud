@@ -26,22 +26,22 @@ interface Employee{
 })
 export class EmpCrudComponent implements OnInit
 {
-  users: Employee[] = [];
+  employees: Employee[] = [];
   name: any
   email: any;
   gender: any;
-  selectedUser: any;
+  selectedEmp: any;
 
   constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
-    this.users = data
+    this.employees = data
   }
 
-  deleteUser(selectedUserId: any) {
+  deleteEmp(selectedEmpId: any) {
     debugger
-    const index = this.users.findIndex(x => x.id == selectedUserId)
-    this.users.splice(index, 1)
+    const index = this.employees.findIndex(x => x.id == selectedEmpId)
+    this.employees.splice(index, 1)
   }
 
   open(content: any) {
@@ -57,27 +57,27 @@ export class EmpCrudComponent implements OnInit
     this.email = ""
     this.name = ""
     this.gender = ""
-    this.selectedUser = null
+    this.selectedEmp = null
   }
 
-  addStudent(values: any) {
-    const size = this.users?.length - 1
-    values.id = this.users[size]?.id + 1
-    this.users.push(values);
+  addEmployee(values: any) {
+    const size = this.employees?.length - 1
+    values.id = this.employees[size]?.id + 1
+    this.employees.push(values);
     this.setAllValues();
   }
 
-  editUser(selectedUser: any, content: any) {
-    this.selectedUser = selectedUser
+  editEmp(selectedEmp: any, content: any) {
+    this.selectedEmp = selectedEmp
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' })
-    this.email = selectedUser?.email
-    this.name = selectedUser?.name
-    this.gender = selectedUser?.gender
+    this.email = selectedEmp?.email
+    this.name = selectedEmp?.name
+    this.gender = selectedEmp?.gender
   }
 
-  updateStudentInTable(values: any) {
-    this.users.forEach(x => {
-      if (x.id == this.selectedUser.id) {
+  updateEmployeeInTable(values: any) {
+    this.employees.forEach(x => {
+      if (x.id == this.selectedEmp.id) {
         x.name = values.name
         x.email = values.email
         x.gender = values.gender
@@ -88,11 +88,11 @@ export class EmpCrudComponent implements OnInit
 
   onSubmit(f: NgForm) {
     const formValues = f?.value;
-    if (this.selectedUser) {
-      this.updateStudentInTable(formValues)
+    if (this.selectedEmp) {
+      this.updateEmployeeInTable(formValues)
     }
     else {
-      this.addStudent(formValues)
+      this.addEmployee(formValues)
     }
     this.modalService.dismissAll(); //dismiss the modal
   }

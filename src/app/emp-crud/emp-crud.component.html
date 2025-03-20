@@ -19,16 +19,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let i of users">
+                        <tr *ngFor="let i of employees">
                             <td>{{ i.id }}</td>
-                            <td>{{ i.name }}</td>
-                            <td>{{ i.email }}</td>
+                            <td>{{ i.name | uppercase}}</td>
+                            <td>{{ i.email | lowercase}}</td>
                             <td>{{ i.gender }}</td>
                             <td>
-                                <button class="btn btn-primary" (click)="editUser(i, content)" title="Edit">
+                                <button class="btn btn-primary" (click)="editEmp(i, content)" title="Edit">
                                     <img src="https://www.svgrepo.com/show/513500/pencil.svg" width="15" />
                                 </button>
-                                <button class="btn btn-red" (click)="deleteUser(i.id)" title="Delete">
+                                <button class="btn btn-red" (click)="deleteEmp(i.id)" title="Delete">
                                     <img src="https://www.svgrepo.com/show/422403/bin-delete-interface.svg" width="15" />
                                 </button>
                             </td>
@@ -38,7 +38,7 @@
             </div>
             <ng-template #content let-modal>
                 <div class="modal-header">
-                    <h4 class="modal-title" id="modal-basic-title">{{selectedUser? "Edit Student": "New Student"}}</h4>
+                    <h4 class="modal-title" id="modal-basic-title">{{selectedEmp? "Edit Employee": "New Employee"}}</h4>
                     <button type="button" class="close" aria-label="Close" (click)="close(modal)">
                         <span aria-hidden="true">&times;</span>
                     </button>
